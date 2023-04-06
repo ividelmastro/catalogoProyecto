@@ -1,6 +1,6 @@
 var usersController ={
     registro: function(req, res, next) {
-        res.send('respond with a resource');
+        res.render("./views/profile");
       },
 }
 module.exports= usersController;
