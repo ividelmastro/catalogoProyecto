@@ -7,3 +7,5 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+///Aca vamos a poner las paginas de registro, login, perfil y edicion de perfil
