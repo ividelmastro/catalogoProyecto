@@ -7,6 +7,11 @@ router.get('/', indexController.index);
 
 router.get('/productos', indexController.productos);
 
+router.get('/agregarProductos', indexController.agregarProductos);
+
+router.get('/resultados', indexController.resultados);
+
+
 module.exports = router;
 
 
