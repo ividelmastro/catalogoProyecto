@@ -84,7 +84,7 @@ let productos = {
 
     ],
 
-    usuarios: [
+    usuario: [
         {
             username: `Guillermina Lopez`,
             email: `Glopez@gmail.com`,
