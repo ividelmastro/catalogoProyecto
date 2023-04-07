@@ -1,5 +1,5 @@
-let productps = {
-    lista: [
+let productos = {
+    listaDeProductos: [
         {
             pieza: "Collar Mon Coeur Oro",
             material: "Oro amarillo",
@@ -117,4 +117,4 @@ let productps = {
     ]
 
 }
-module.exports = lista;
+module.exports = productos;

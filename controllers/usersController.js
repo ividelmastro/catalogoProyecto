@@ -1,3 +1,7 @@
+var db = require("../db/productos");
+var usuario = db.usuarios[0];
+
+
 var usersController ={
     register: function(req, res, next) {
         res.render("register");
@@ -9,11 +13,12 @@ var usersController ={
         res.render("login");
       },
     profileEdit: function(req, res, next) {
-        res.render("profile-edit");
+        res.render("profile-edit", {usuario});
       },
     agregarProductos: function(req, res, next) {
       res.render('product-add', { title: 'Agregar productos' });
       },
+    
     
     
 }
