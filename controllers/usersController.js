@@ -11,6 +11,9 @@ var usersController ={
     profileEdit: function(req, res, next) {
         res.render("profile-edit");
       },
+    agregarProductos: function(req, res, next) {
+      res.render('product-add', { title: 'Agregar productos' });
+      },
     
     
 }
