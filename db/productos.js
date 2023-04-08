@@ -33,6 +33,14 @@ let productos = {
             comentario: "Elegante y autentico",
         },
         {
+            pieza: "Collar Mali Baniado en Oro",
+            material: "Oro amarillo",
+            precio: 16.000,
+            descripcion: "Oro de 24 quilates: también conocido como oro puro, es el tipo de oro más puro que se puede encontrar en el mercado. Contiene un 99,9% de oro.",
+            imagen: "/images/products/blazerBlanco.jpeg",
+            comentario: "Muy finos y cancheros!",
+        },
+        {
             pieza: "Collar Chloe personalizado",
             material: "Oro amarillo",
             precio: 12.000,
@@ -72,14 +80,7 @@ let productos = {
             imagen: "/images/products/pulseraYanillos.jpegs",
             comentario: "Son super comodos y estan muy de moda!",
         },
-        {
-            pieza: "Collar Mali Baniado en Oro",
-            material: "Oro amarillo",
-            precio: 16.000,
-            descripcion: "Oro de 24 quilates: también conocido como oro puro, es el tipo de oro más puro que se puede encontrar en el mercado. Contiene un 99,9% de oro.",
-            imagen: "/images/products/blazerBlanco.jpeg",
-            comentario: "Muy finos y cancheros!",
-        },
+        
 
 
     ],
