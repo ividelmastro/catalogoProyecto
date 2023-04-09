@@ -26,13 +26,16 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form>
+			<form method="GET" action="/product-add">
 				<label for="myfile">Imagen:</label>
 				<input type="file" id="myfile" name="myfile">
+
 				<label for="producto">Nombre del Producto</label>
   				<input type="text" id="producto" name="producto">
+
 				<label for="descripcion">Descripcion:</label>
   				<input type="text" id="descripcion" name="descripcion">
+				
 				<label for="fecha_carga">Fecha de Carga:</label>
   				<input type="date" id="fecha_carga" name="fecha_carga">
 			</form>
