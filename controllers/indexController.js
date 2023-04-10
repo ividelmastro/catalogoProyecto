@@ -6,7 +6,7 @@ var indexController = {
         res.render('index', { title: 'Mercado Liebre', lista:listaDeProductos });
     },
     productos: function(req, res, next) {
-        res.render('product', {title: 'Producto' ,item:listaDeProductos[req.params.id],  comentarios:db.comentarios});
+        res.render('product', {title: 'Producto' ,item:listaDeProductos[req.params.id],  comentarios:db.comentarios, usuario:db.usuario});
     },
     resultados: function(req, res, next) {
         res.render('search-results', { title: 'Resultados de busqueda' });

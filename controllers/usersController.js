@@ -7,7 +7,7 @@ var usersController ={
         res.render("register");
       },
     profile: function(req, res, next) {
-        res.render("profile");
+        res.render("profile", {usuario});
       },
     login: function(req, res, next) {
         res.render("login");
