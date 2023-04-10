@@ -8,6 +8,7 @@ router.get('/profile',usersController.profile);
 router.get('/login',usersController.login);
 router.get('/profile-edit',usersController.profileEdit);
 router.get('/product-add', usersController.agregarProductos);
+router.get('/productos/:id', usersController.productos);
 
 module.exports = router;
 
