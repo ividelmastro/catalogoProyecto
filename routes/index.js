@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', indexController.index);
 
-router.get('/productos', indexController.productos);
+router.get('/productos/:id', indexController.productos);
 
 
 router.get('/resultados', indexController.resultados);
