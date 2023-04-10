@@ -1,16 +1,18 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #F4ECE0;
   --dark-blue: #03264C;
-  --light-blue: #1259c3;
+  --light-blue: #56470ef3;
   --gray: #666666;
   --light-gray: #ebebeb;
   --green: #39b54a;
-  --base-font-family: 'Roboto', sans-serif
+  font-family: 'Montserrat', sans-serif;
 }
 
 

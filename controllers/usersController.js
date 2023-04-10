@@ -20,7 +20,7 @@ var usersController ={
       res.render('product-add', { usuario});
       },
     productos: function(req, res, next) {
-      res.render('product', {title: 'Producto' ,item:listaDeProductos[req.params.id],  comentarios:db.comentarios, usuario:db.usuario});
+      res.render('product', {usuario: db.usuario[res.params.id]});
     },
     
  }
