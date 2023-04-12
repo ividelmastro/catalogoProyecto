@@ -16,12 +16,6 @@ var usersController ={
     profileEdit: function(req, res, next) {
         res.render("profile-edit", {usuario});
       },
-    agregarProductos: function(req, res, next) {
-      res.render('product-add', { usuario});
-      },
-    productos: function(req, res, next) {
-      res.render('product',{item: listaDeProductos[req.params.id], comentarios: db.comentarios, usuario});
-    },
     
  }
 module.exports= usersController;

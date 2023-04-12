@@ -1,11 +1,12 @@
 var express = require('express');
-var indexController = require('../controllers/indexController');
+var productController = require('../controllers/productController');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', indexController.index);
 
-router.get('/resultados', indexController.resultados);
+router.get('/:id', productController.productos);
+router.get('/product-add', productController.agregarProductos);
+
 
 
 module.exports = router;
