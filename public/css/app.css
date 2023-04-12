@@ -12,7 +12,7 @@
   --dark-blue: #03264C;
   --light-blue: #56470ef3;
   --gray: #666666;
-  --light-gray: #ebebeb;
+  --light-gray: white;
   --green: #39b54a;
   font-family: 'Montserrat', sans-serif;
 }
@@ -405,13 +405,15 @@ hr {
 }
 .comments {
   padding: 30px 15px 15px 0;
+  background-color: white ;
 }
 .comments article{
   margin-bottom: 7.5px;
   padding-bottom: 7.5px;
-  border-bottom: 1px solid #dcdcdc;
+  border-bottom: 1px solid rgb(44, 41, 41);
   display: flex;
   justify-content: space-between;
+  
 }
 .comments img{
   width: 40px;
@@ -534,4 +536,44 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+}
+
+.casilla {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.cargar-fecha {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.boton-archivo {
+  border: none;
+  background-color: white;
+  color: brown;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.boton {
+  background-color: #56470ef3;
+  ;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.marco-formulario {
+  background-color: #F4ECE0; 
+  border: 2px solid white; 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
 }
