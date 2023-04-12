@@ -40,7 +40,7 @@
 							<div class="data">
 								<p class="user">
 								
-									<strong> <a href="/users/profile"><%= usuario[i].username %> </a> </strong>
+									<a class="nombres-usuarios" href="/users/profile"><%= usuario[i].username %> </a>
 					
 							<%= comentarios[i].texto %></p>
 							</div>
@@ -49,9 +49,9 @@
 						
 
 					</section>
-					<form class="form" action="" method="POST">
+					<form class="form"  method="" action="">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						<a href="/product"><button type="submit" class="buy-now-button"> AGREGAR COMENTARIO</button></a>
 					</form>
 					<hr>
 				</div>
