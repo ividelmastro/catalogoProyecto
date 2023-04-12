@@ -6,7 +6,7 @@ var indexController = {
         res.render('index', { title: 'Mercado Liebre', lista:listaDeProductos});
     },
     resultados: function(req, res, next) {
-        res.render('search-results', { title: 'Resultados de busqueda' });
+        res.render('search-results', { title: 'Resultados de busqueda',lista:[listaDeProductos[0]], usuario:db.usuario, productoBuscado: req.query.search});
     },
     
 

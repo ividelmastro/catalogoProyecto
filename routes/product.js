@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 
-router.get('/:id', productController.productos);
+router.get('/item/:id', productController.productos);
 router.get('/product-add', productController.agregarProductos);
 
 

@@ -7,8 +7,9 @@ var productController = {
         res.render('product', {title: 'Producto' ,item:listaDeProductos[req.params.id],  comentarios:db.comentarios, usuario:db.usuario});
     },
     agregarProductos: function(req, res, next) {
-        res.render('product-add');
+        res.render('product-add',  {title: 'Agregar producto', item:listaDeProductos[req.params.id], comentarios:db.comentarios, usuario:db.usuario});
         },
+    
 
 }
 
