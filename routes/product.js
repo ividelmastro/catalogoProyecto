@@ -6,6 +6,7 @@ var router = express.Router();
 
 router.get('/item/:id', productController.productos);
 router.get('/product-add', productController.agregarProductos);
+router.get('/product-edit', productController.editarProductos);
 
 
 
