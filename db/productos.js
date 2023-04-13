@@ -201,6 +201,12 @@ let productos = {
             usuario: `fan_de_collares123`,
             texto: `Me queria llevar todo! Muy buen trabajo y excelentes productos`
         },
+        {
+            id:4,
+            fecha:"18/02/2015",
+            usuario: `vicky_lopez`,
+            texto: `Calidad suprema!!! Muchas gracias!!`
+        },
 
     ]
 
