@@ -46,23 +46,24 @@ values ("Guillermina Lopez", "Glopez@gmail.com", "documento", "Guillermina", "19
 ("Azul Fernandez", "fernandez_azul@gmail.com", "azulfer", "Azul", "2002-01-12", 41567617);
 
 INSERT INTO productos (id_usuario, nombre_producto, descripcion)
-values (0, "Collar Mon Coeur Oro", "Oro Amarillo"),
-(1, "Aros FIORE", "Oro Amarillo"), 
-(2, "COllar inicial enchapado en oro", "Oro Amarillo"),
-(3, "Anillo Abbondanza", "Bronce"),
-(4, "Collar Chloe personalizado", "Oro Amarillo"),
-(5, "Pulsera Cleopatra", "Oro Amarillo con piedras azuladas"),
-(6, "Aros Ivanka", "Oro Amarillo"),
-(7, "Brazalete Cobalto", "Oro Amarillo y piedras de color Cobalto"),
-(8, "Anillo y pulsera Mercury", "Oro Amarillo"),
-(9, "Collae Mali baniado en Oro", "Oro Amarillo"); 
+values (1, "Collar Mon Coeur Oro", "Oro Amarillo"),
+(1, "Collar inicial enchapado en oro", "Oro Amarillo"),
+(1, "Anillo Abbondanza", "Bronce"),
+(2, "Collar Chloe personalizado", "Oro Amarillo"),
+(2, "Pulsera Cleopatra", "Oro Amarillo con piedras azuladas"),
+(3, "Aros Ivanka", "Oro Amarillo"),
+(4, "Brazalete Cobalto", "Oro Amarillo y piedras de color Cobalto"),
+(4, "Anillo y pulsera Mercury", "Oro Amarillo"),
+(5, "Collae Mali baniado en Oro", "Oro Amarillo"),
+(3, "Aros Victoria", "Oro Amarillo");
+
 
 INSERT INTO comentarios (id_producto, id_usuario, texto_comentario)
-values (0, 0, "Buenisma esta pieza, la recomiendo!"), 
-(1, 1, "Piezas super autenticas y originales"),
-(2, 2, "Lugar super recomendado, piezas de excelente calidad y disenio!"),
-(3, 3, "Me queria llevar todo! Muy buen trabajo y excelentes productos"),
-(4, 4, "Calidad suprema!!! Muchas gracias!!");
+values (1, 1, "Buenisma esta pieza, la recomiendo!"), 
+(2, 2, "Piezas super autenticas y originales"),
+(3, 3, "Lugar super recomendado, piezas de excelente calidad y disenio!"),
+(4, 4, "Me queria llevar todo! Muy buen trabajo y excelentes productos"),
+(5, 5, "Calidad suprema!!! Muchas gracias!!");
 
 
 

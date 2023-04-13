@@ -75,7 +75,7 @@ let productos = {
         {
             id:6,
             id_usuario:6,
-            pieza: "Aros Ivanja",
+            pieza: "Aros Ivanka",
             material: "Oro amarillo",
             precio: 13.500,
             descripcion: "Baniados en Oro Amarillo",
