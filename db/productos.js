@@ -11,9 +11,6 @@ let productos = {
             fecha_modificacion: null,
             fecha_borrar: null,
             fecha_creado: null,
-
-            //hacer
-
         },
         {
             id:1,
@@ -135,8 +132,9 @@ let productos = {
             contrasena: `documento`,
             fecha_nacimiento: `1998-03-18`,
             dni: "44917243",
-            image: "agregar",
+            image: "https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_girl_female_woman_profile_smiley_happy_people_icon_181665.png",
         },
+        
         {
             id: 1,
             username: `Juana Diez`,
@@ -144,7 +142,7 @@ let productos = {
             contrasena: `panqueque`,
             fecha_nacimiento: `2003-05-11`,
             dni: "46282929",
-            image: "agregar",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6oOF6CrDOU6SLZyGEeGiXrk4ec2XpwBUbjw&usqp=CAU",
         },
         {
             id: 2,
@@ -153,7 +151,7 @@ let productos = {
             contrasena: `lola123456`,
             fecha_nacimiento: `2000-11-02`,
             dni: "455855272",
-            image: "agregar",
+            image: "https://static.vecteezy.com/system/resources/previews/002/843/401/non_2x/cute-little-blond-girl-head-character-free-vector.jpg",
         },
         {
             id: 3,
@@ -162,7 +160,7 @@ let productos = {
             contrasena: `abril123`,
             fecha_nacimiento: `2001-12-12`,
             dni: "415678817",
-            image: "agregar",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQyaYvYq_6lj6ykALDyEpx21Sv9WODUBGoTw&usqp=CAU",
         },
         {
             id: 4,
@@ -171,7 +169,7 @@ let productos = {
             contrasena: `azulfer`,
             fecha_nacimiento: `2002-01-12`,
             dni: "41567617",
-            image: "agregar",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQyaYvYq_6lj6ykALDyEpx21Sv9WODUBGoTw&usqp=CAU",
         },
 
     ],
