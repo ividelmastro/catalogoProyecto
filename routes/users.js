@@ -8,6 +8,8 @@ router.get('/profile',usersController.profile);
 router.get('/login',usersController.login);
 router.get('/profile-edit',usersController.profileEdit);
 
+/* POST */
+router.post('/register', usersController.create);
+router.post('/login', usersController.signIn)
 module.exports = router;
 
-///Aca vamos a poner las paginas de registro, login, perfil y edicion de perfil
