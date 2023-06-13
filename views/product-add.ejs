@@ -26,7 +26,7 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class= "marco-formulario" method="POST" action="/products/product-add">
+			<form class= "marco-formulario" method="POST" enctype= 'multipart/form-data' action="/products/product-add">
 				<p><label for="imagen">Imagen:</label></p>
 				<p><input class="boton-archivo"  type="file" id="imagen" name="imagen"></p>
 
