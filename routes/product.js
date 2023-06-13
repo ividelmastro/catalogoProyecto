@@ -1,6 +1,21 @@
 var express = require('express');
 var productController = require('../controllers/productController');
 var router = express.Router();
+const multer = require('multer');
+const path = require ('path');
+
+
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname, '../public/images')) //Usamos path.join para evitar problemas de rutas. __dirname da la posición exacta de la carpeta en la que está el archivo. Luego desde ahí nos movemos hasta la carpeta public.
+      //Las carpetas deben existir.
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+  
+var upload = multer({ storage: storage })
 
 /* GET home page. */
 
@@ -8,6 +23,7 @@ router.get('/item/:id', productController.productos);
 router.get('/product-add', productController.agregarProductos);
 router.get('/product-edit', productController.editarProductos);
 
+router.post ('/product-add', upload.single('imagen'), productController.create);
 
 
 module.exports = router;

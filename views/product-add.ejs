@@ -26,9 +26,9 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class= "marco-formulario" method="GET" action="/">
-				<p><label for="myfile">Imagen:</label></p>
-				<p><input class="boton-archivo"  type="file" id="myfile" name="myfile"></p>
+			<form class= "marco-formulario" method="POST" action="/products/product-add">
+				<p><label for="imagen">Imagen:</label></p>
+				<p><input class="boton-archivo"  type="file" id="imagen" name="imagen"></p>
 
 				<p><label for="producto">Nombre del Producto</label></p>
 				<p><input class="casilla" type="text" id="producto" name="producto"></p>
@@ -36,8 +36,6 @@
 				<p><label for="descripcion">Descripcion:</label></p>
 				<p><input class="casilla" type="text" id="descripcion" name="descripcion"></p>
 				
-				<p><label for="fecha_carga">Fecha de Carga:</label></p>
-				<p><input class="cargar-fecha" type="date" id="fecha_carga" name="fecha_carga"></p>
 				<button class="boton" type="submit">Agregar</button>
 			</form>
 			<h2 class="col-12"> 
