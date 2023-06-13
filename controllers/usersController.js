@@ -12,9 +12,24 @@ var usersController ={
     profile: function(req, res, next) {
     res.render("profile", {usuario, lista:listaDeProductos});
     },
-    login: function(req, res, next) {
-        res.render("login");
-      },
+    login: function (req, res) {
+        console.log(req.session.user)
+        console.log(res.locals)
+        if (req.session.user != undefined) {
+            return res.redirect('/')
+        } else {
+        return res.render('login')
+       }
+    },
+    logout: function (req, res) {
+        console.log(req.session)
+        req.session.destroy();
+        if (req.cookies.userId !== undefined) {
+            res.clearCookie('userId')
+        }
+        return res.redirect('/')
+    },
+
     profileEdit: function(req, res, next) {
         res.render("profile-edit", {usuario});
       },
@@ -68,8 +83,12 @@ var usersController ={
           .then(function (user) {
               if (user !== null) {
                   if (bcrypt.compareSync(req.body.pwd, user.password)) {
-                      req.session.user = user.dataValues;
-                      
+                    req.session.user = user.dataValues;
+                    if (req.body.recordarme) {
+                        res.cookie('userId', user.dataValues.id, {
+                            maxAge: 3000000
+                        })
+                    }
                       
                       return res.redirect('/');
                   } else {
@@ -86,7 +105,9 @@ var usersController ={
               console.log(error);
               return res.render('login');
           })
+    
   },
+
  }
 
 

@@ -8,8 +8,10 @@ router.get('/profile',usersController.profile);
 router.get('/login',usersController.login);
 router.get('/profile-edit',usersController.profileEdit);
 
+
 /* POST */
 router.post('/register', usersController.create);
 router.post('/login', usersController.signIn)
+router.post('/logout', usersController.logout);
 module.exports = router;
 
