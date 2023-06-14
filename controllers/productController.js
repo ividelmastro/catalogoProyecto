@@ -28,11 +28,12 @@ var productController = {
         res.render('product-edit',  {title: 'Editar producto', item:listaDeProductos[req.params.id], comentarios:db.comentarios, usuario:db.usuario});
         },
         create: function (req, res) {
+          //console.log(req.session)
             let producto = {
               userId: req.session.user.id,
               nameProduct: req.body.producto,
               description: req.body.descripcion,
-              photoProduct: '/images/products/anilloPierdas.jpeg', //error: req.file.filename
+              photoProduct: req.file.filename
             }
 
             products.create(producto)
