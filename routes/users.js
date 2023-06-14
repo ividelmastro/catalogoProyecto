@@ -20,7 +20,7 @@ var upload = multer({ storage: storage })
 
 /* GET users listing. */
 router.get('/register',usersController.register);
-router.get('/profile',usersController.profile);
+router.get('/profile/:id',usersController.profile); // para que cada usuario tenga su ruta
 router.get('/login',usersController.login);
 router.get('/profile-edit',usersController.profileEdit);
 

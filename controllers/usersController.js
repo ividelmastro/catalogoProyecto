@@ -4,13 +4,39 @@ var listaDeProductos = db.listaDeProductos;
 var usuario = db.usuario[0];
 const users = dbOrm.User;
 const bcrypt = require('bcryptjs');
+const products = dbOrm.Product;
 
 var usersController ={
     register: function(req, res, next) {
         res.render("register");
       },
-    profile: function(req, res, next) {
-    res.render("profile", {usuario, lista:listaDeProductos});
+    profile: function (req, res) {
+        users.findOne({
+                where: [{
+                    id: req.params.id
+                }],
+            }).then(async function (user) {
+                const productsResults = products.findAll({
+                    where: [{
+                        userId: req.params.id
+                    }],
+                    include: [ { association: 'user' }, {
+                        association: 'comments',
+                        include: [{
+                          association: 'user'
+                        }]
+                    }]
+                })
+                
+                return res.render('profile', {
+                    user: user,
+                    productos: productsResults,
+   
+                })
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
     },
     login: function (req, res) {
         console.log(req.session.user)
