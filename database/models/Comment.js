@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
     }
 const  Comment = sequelize.define(alias, cols, config)    
 
-/*
+
 Comment.associate = function (models){
     Comment.belongsTo(models.Product,{
         foreignKey: 'productId',
@@ -50,7 +50,7 @@ Comment.associate = function (models){
         foreignKey: 'userId',
         as: 'user'
     })
-}*/
+}
 
 
     return Comment;

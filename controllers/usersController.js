@@ -53,7 +53,7 @@ var usersController ={
                         dni: req.body.nroDocumento,
                         username: req.body.username,
                         password: bcrypt.hashSync(req.body.pwd, 10), 
-                        profilePhoto: "/images/users/default-image.png",
+                        profilePhoto: req.file.filename,
                         dateBirth: req.body.dateBirth,
                     }
             
