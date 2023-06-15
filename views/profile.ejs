@@ -15,7 +15,12 @@
 	<link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-	<%- include('./partials/headerLogueado') %>
+	<% if (locals.user != null) { %>
+		<%- include('./partials/headerLogueado')  %>
+		<% } else{%>
+		<%- include('./partials/headerGeneral')  %>
+		<% } %>
+	
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
@@ -25,7 +30,7 @@
 			</div>
 			<div class="data-container col-6">
 				<div class="d-flex align-items-center ">
-					<h1 class="main-title"><%= user.username %> 
+					<h1 class="main-title"><%= usuario.username %> 
 						<a href="/users/profile-edit">
 							<i class="fas fa-cog"></i>
 						</a>

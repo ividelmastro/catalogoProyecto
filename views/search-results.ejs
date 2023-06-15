@@ -31,18 +31,24 @@
 			<!-- Show the "search" products -->
 			
 							<% for( let i = 0 ; i< lista.length; i++)  { %>    
-								<div class="col-12 col-sm-6 col-lg-3">
-								<section class="product-box">
-									<a href="productos/item/<%= lista[i].id %>">
-										<figure class="product-box_image">
-											<img src=<%= "/images/products/" + lista[i].photoProduct %> alt="imagen_producto">
-										</figure>
+								<div class="col-12 col-sm-6 col-lg-3">\
+								
+									<section class="product-box">
+										<a href="/products/item/<%= lista[i].id %>">
+											<figure class="product-box_image">
+												<img src=<%= "/images/products/" + lista[i].photoProduct %> alt="imagen_producto">
+											</figure>
+											<article class="product-box_data">
+												<h2><%= lista[i].nameProduct %></h2>
+												<p><%= lista[i].description %></p>
+												<p><%= lista[i].comments %></p>
+											</article>
+										</a>
 										<article class="product-box_data">
-											<h2><%= lista[i].nameProduct %></h2>
-											<p><%= lista[i].description %></p>
-											<p>Creado por <%= lista[i].user.username %></p>
-										</article>
-									</a>
+											<a href="/users/profile/<%= lista[i].user.id %>">
+												<p>Creado por <%= lista[i].user.username %></p>
+											</article>
+										</a>
 								</section>
 							</div>
 							<% } %>

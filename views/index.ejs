@@ -49,6 +49,11 @@
 							<p><%= lista[i].comments %></p>
 						</article>
 					</a>
+					<article class="product-box_data">
+						<a href="/users/profile/<%= lista[i].user.id %>">
+							<p>Creado por <%= lista[i].user.username %></p>
+						</article>
+					</a>
 				</section>
 			</div>
 			<% } %>

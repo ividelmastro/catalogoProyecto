@@ -12,7 +12,8 @@ var indexController = {
            
         {
             order: [[ "createdAt" , "DESC"]]
-        })
+            , 
+            include: [ { association: 'user' }]})
           .then(function(results){
             console.log(results);
               return res.render('index', {title: 'La Odisea', lista : results})

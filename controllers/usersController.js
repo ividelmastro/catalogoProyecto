@@ -29,7 +29,7 @@ var usersController ={
                 })
                 
                 return res.render('profile', {
-                    user: user,
+                    usuario: user,
                     productos: productsResults,
    
                 })
