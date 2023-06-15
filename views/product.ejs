@@ -29,7 +29,9 @@
 					<a href="/products/product-edit/<%= item.id%>">Editar</a>
 				</p>
 				<p class="product-detail-description">
-				<a href="/products/product-edit/<%= item.id%>">Eliminar</a>
+			<form class=""  method="POST" action="/products/product-delete/<%= item.id%>">
+			<button type="submit" class="buy-now-button"> Eliminar</button>
+			</form>
 			</p>
 			<% } %>
 		</div>
