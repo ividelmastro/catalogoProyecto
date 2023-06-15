@@ -24,9 +24,14 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= item.nameProduct%> mafalda</h2> 
-			<p class="product-detail-description">
-				<a href="/productos/product-edit">Editar</a>
+			<% if (locals.user.id == item.userId) { %>
+				<p class="product-detail-description">
+					<a href="/products/product-edit/<%= item.id%>">Editar</a>
+				</p>
+				<p class="product-detail-description">
+				<a href="/products/product-edit/<%= item.id%>">Eliminar</a>
 			</p>
+			<% } %>
 		</div>
 		<div class="product-detail">
 			<div class="row">

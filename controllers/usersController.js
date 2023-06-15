@@ -57,8 +57,13 @@ var usersController ={
     },
 
     profileEdit: function(req, res, next) {
-        res.render("profile-edit", {usuario});
+        if (req.session.user != undefined) {
+            return res.redirect('/')
+        } else {
+        return res.render('profile-edit')
+       }
       },
+    
  
     create: function (req, res) {
         
@@ -96,6 +101,32 @@ var usersController ={
             .catch(errors => {
                 
                 return res.render('register');
+            })
+    },
+    update: function (req, res) {
+        req.body.password = bcrypt.hashSync(req.body.password, 10)
+        
+        let user = {
+            email: req.body.email,
+            dni: req.body.DNI,
+            username: req.body.username,
+            password: bcrypt.hashSync(req.body.password, 10),
+            profilePhoto: req.file.filename,
+        }
+        users.update(user, {
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(function (data) {
+                if (req.file) {
+                    req.session.user.profilePhoto = req.file.filename
+                }
+                res.redirect('/')
+            })
+            .catch(function (error) {
+                console.log(error)
+                res.send(error)
             })
     },
     signIn: function (req, res) {

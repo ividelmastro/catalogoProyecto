@@ -18,14 +18,35 @@ var productController = {
             console.log(error)
             return res.send(error);
           })
-        
-        //res.render('product', {title: 'Product' ,item:listaDeProductos[req.params.id],  comentarios:db.comentarios, usuario:db.usuario});
+      
     },
     agregarProductos: function(req, res, next) {
         res.render('product-add',  {title: 'Agregar producto', item:listaDeProductos[req.params.id], comentarios:db.comentarios, usuario:db.usuario});
         },
     editarProductos: function(req, res, next) {
-        res.render('product-edit',  {title: 'Editar producto', item:listaDeProductos[req.params.id], comentarios:db.comentarios, usuario:db.usuario});
+      products.findByPk(req.params.id,
+        {
+      include: [ { association: 'user' }, {
+          association: 'comments',
+          include: [{
+            association: 'user'
+          }]
+      }]}
+        
+        
+        )
+      .then((producto) => {
+          if (req.session.user.id === producto.user.id)
+           {return res.render('product-edit', {
+            title: 'Editar Producto' , item:producto});}
+          else { 
+            return res.redirect('/login')}
+        })
+      .catch((error) => {
+        console.log(error)
+        return res.send(error);
+      })
+    
         },
         create: function (req, res) {
           //console.log(req.session)
@@ -44,8 +65,48 @@ var productController = {
               .catch(error => console.log(error))
         
           },
-    
+          update: function (req, res) {
 
+              let producto = {
+                userId: req.session.user.id,
+                nameProduct: req.body.producto,
+                description: req.body.descripcion,
+                photoProduct: req.file.filename
+              }
+          
+              products.update(
+                {
+                  userId: req.session.user.id,
+                  nameProduct: req.body.producto,
+                  description: req.body.descripcion,
+                  photoProduct: req.file.filename
+                },
+                 {where: {
+                          id: req.params.id
+                      }
+                  })
+                  .then(function () {
+                      return res.redirect('/products/item/' + req.params.id)
+                  })
+                  .catch(function (error) {
+                      console.log(error)
+                      res.send(error)
+                  })
+          },
+          delete: function (req, res) {
+            products.destroy({
+                where: {
+                  id: req.params.id
+                }
+              })
+              .then(function () {
+                return res.redirect('/')
+              })
+              .catch(function (error) {
+                res.send(error)
+              })
+          },
+        
 }
 
 module.exports= productController;

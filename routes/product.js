@@ -20,9 +20,10 @@ var upload = multer({ storage: storage })
 
 router.get('/item/:id', productController.productos);
 router.get('/product-add', productController.agregarProductos);
-router.get('/product-edit', productController.editarProductos);
+router.get('/product-edit/:id', productController.editarProductos);
 
 router.post ('/product-add', upload.single('imagen'), productController.create);
+router.post('/product-edit/:id', upload.single('imagen'), productController.update);
 
 
 module.exports = router;

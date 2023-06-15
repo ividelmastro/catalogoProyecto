@@ -29,5 +29,6 @@ router.get('/profile-edit',usersController.profileEdit);
 router.post('/register', upload.single('profilePhoto'), usersController.create);
 router.post('/login', usersController.signIn)
 router.post('/logout', usersController.logout);
+router.post('/profile-edit', upload.single('profilePhoto'), usersController.update);
 module.exports = router;
 
