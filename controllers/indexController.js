@@ -1,5 +1,3 @@
-var db = require("../db/productos");
-var listaDeProductos = db.listaDeProductos;
 const dbOrm = require('../database/models');
 const users = dbOrm.User;
 const products = dbOrm.Product;

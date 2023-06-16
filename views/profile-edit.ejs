@@ -26,12 +26,12 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form class= "marco-formulario" method="GET" action="/">
+			<form class= "marco-formulario" method="POST" enctype="multipart/form-data" action="/users/profile-edit"> 
 				<p><label for="email">Email:</label></p>
 				<p><input class="casilla" type="email" id="email" name="email" required></p>
 
-				<p><label for="users">User:</label></p>
-				<p><input class="casilla" type="text" id="users" name="users" required></p>
+				<p><label for="username">User:</label></p>
+				<p><input class="casilla" type="text" id="username" name="username" required></p>
 
 				<p><label for="pwd">Password:</label></p>
 				<p><input class="casilla" type="password" id="pwd" name="pwd" required></p>
@@ -39,10 +39,10 @@
 				<p><label for="birthday">Birthday:</label></p>
 				<p><input class="cargar-fecha" type="date" id="birthday" name="birthday" required></p>
 
-				<p><label for="Profile_pic">Profile Pic:</label></p>
-				<p><input class="boton-archivo" type="file" id="profil_pic" name="profile_pic" required></p>
+				<p><label for="profilePhoto">foto de perfil:</label></p>
+				<p><input class="boton-archivo" type="file" id="profilePhoto" name="profilePhoto" required></p>
 
-				<p><label>Número de documento:</label></p>
+				<p><label for="nroDocumento">Número de documento:</label></p>
 				<p><input class="casilla" type="number" name="nroDocumento" required></p>
 
 				<p><button class="boton" type="submit">Guardar cambios</button></p>

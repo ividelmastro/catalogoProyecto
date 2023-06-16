@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,52 +15,90 @@
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/css/app.css">
 </head>
+
 <body>
-	<% if (locals.user != null) { %>
-		<%- include('./partials/headerLogueado')  %>
-		<% } else{%>
-		<%- include('./partials/headerGeneral')  %>
-		<% } %>
-	<!-- product detail -->
-	<div class="container products-wrapper">
-		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= item.nameProduct%> mafalda</h2> 
-			<% if (locals.user.id == item.userId) { %>
-				<p class="product-detail-description">
-					<a href="/products/product-edit/<%= item.id%>">Editar</a>
-				</p>
-				<p class="product-detail-description">
-			<form class=""  method="POST" action="/products/product-delete/<%= item.id%>">
-			<button type="submit" class="buy-now-button"> Eliminar</button>
-			</form>
-			</p>
-			<% } %>
-		</div>
-		<div class="product-detail">
-			<div class="row">
-				<article class="col-12 col-lg-8 product-detail-info">
-					<img src=<%=  "/images/products/" + item.photoProduct%> alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						<%= item.description%></p>
-				</article>
-				<div class="col-12 col-lg-4">
-			
-               <!-- COMENTARIOS -->
-			   
-					<form class="form"  method="" action="">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<a href="/product"><button type="submit" class="buy-now-button"> AGREGAR COMENTARIO</button></a>
-					</form>
-					<hr>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- /product detail -->
+	<% if (locals.user !=null) { %>
+		<%- include('./partials/headerLogueado') %>
+			<% } else{%>
+				<%- include('./partials/headerGeneral') %>
+					<% } %>
+						<!-- product detail -->
+						<div class="container products-wrapper">
+							<div class="d-flex align-items-center">
+								<h2 class="products-title">
+									<%= item.nameProduct%> mafalda
+								</h2>
 
-	<!-- footer -->
-	<%- include('./partials/footer') %>
-	<!-- /footer -->
 
-</body>	
+								<% if (locals.user !=null && locals.user.id==item.userId) { %>
+									<p class="product-detail-description">
+										<a href="/products/product-edit/<%= item.id%>">Editar</a>
+									</p>
+									<p class="product-detail-description">
+									<form class="" method="POST" action="/products/product-delete/<%= item.id%>">
+										<button type="submit" class="buy-now-button"> Eliminar</button>
+									</form>
+									</p>
+									<% } %>
+
+
+							</div>
+							<div class="product-detail">
+								<div class="row">
+									<article class="col-12 col-lg-8 product-detail-info">
+										<img src=<%="/images/products/" + item.photoProduct%> alt=""
+										class="product-detail-img">
+										<p class="product-detail-description">
+											<%= item.description%>
+										</p>
+										<p class="product-detail-description">
+											<a href="/users/profile/<%= item.user.id %>">
+												Creado por <%= item.user.username %></a>
+										</p>
+									</article>
+									<div class="col-12 col-lg-4">
+
+										<!-- COMENTARIOS -->
+										<section class="comments">
+											<% for( let i=0 ; i< item.comments.length; i++) { %>
+												<p class="user">
+													<strong>
+														<a href=<%="/users/profile/" +item.comments[i].user.id %>> <%=
+																item.comments[i].user.username %> </a>
+													</strong>
+
+												</p>
+												<article>
+
+													<div class="data">
+
+														<p>
+															<%= item.comments[i].textComment %>
+														</p>
+													</div>
+
+												</article>
+												<% } %>
+
+
+										</section>
+										<form class="form" method="POST" action=<%="/products/product-comment/" +
+											item.id%>>
+											<input class="form-input" name="textComment" id="textComment" type="text"
+												value="" placeholder="Agregar comentario">
+											<button type="submit" class="buy-now-button"> AGREGAR COMENTARIO</button>
+										</form>
+										<hr>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- /product detail -->
+
+						<!-- footer -->
+						<%- include('./partials/footer') %>
+							<!-- /footer -->
+
+</body>
+
 </html>
